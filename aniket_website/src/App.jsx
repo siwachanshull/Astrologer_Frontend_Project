@@ -344,6 +344,59 @@ function App() {
         </div>
       </section>
 
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <div className="footer-brand">
+            <strong>Aniket Sharma</strong>
+            <span>Astrology Guidance &amp; Consultation</span>
+          </div>
+
+          <div className="footer-socials" aria-label="Social media links">
+            <a
+              className="footer-social whatsapp-social"
+              href="https://wa.me/918076680440?text=Hello%20Aniket%20Sharma"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Chat on WhatsApp at +91 80766 80440"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.52 3.48A11.77 11.77 0 0 0 12.1 1a11.7 11.7 0 0 0-10.2 17.8L1 23l4.35-1.13A11.7 11.7 0 0 0 12.1 23a11.72 11.72 0 0 0 8.42-3.13 11.72 11.72 0 0 0 0-16.39ZM12.1 21.2a9.72 9.72 0 0 1-4.95-1.35l-.35-.2-2.58.67.68-2.51-.23-.36A9.72 9.72 0 1 1 12.1 21.2Zm5.39-7.12c-.29-.15-1.72-.85-1.99-.94-.27-.1-.46-.15-.66.15-.19.29-.75.94-.91 1.14-.17.19-.33.22-.62.07-.29-.15-1.23-.46-2.34-1.45-.86-.77-1.45-1.72-1.62-2.01-.17-.3-.02-.46.13-.61.14-.14.29-.34.44-.51.15-.17.2-.29.3-.48.1-.19.05-.36-.02-.51-.07-.15-.66-1.61-.91-2.2-.24-.58-.49-.5-.66-.51l-.56-.01a1.08 1.08 0 0 0-.79.37c-.27.29-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.08c.14.19 2.1 3.21 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.72-.7 1.96-1.38.23-.68.23-1.26.16-1.38-.07-.12-.27-.19-.56-.34Z" />
+              </svg>
+              <span>+91 80766 80440</span>
+            </a>
+
+            <a
+              className="footer-social"
+              href="https://www.instagram.com/astrologeraniketsharma"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Visit Instagram"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="2" />
+                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="2" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+              </svg>
+              <span>Instagram</span>
+            </a>
+
+            <a
+              className="footer-social"
+              href="https://m.youtube.com/@astrologeraniketsharma?ra=m&fbclid=PARlRTSAT_s4FwZG9mAmZkaWQWUNYRmlPf-w7av1EPRZdsaWyilxOGYGV4dG4DYWVtAjEwAHNydGMGYXBwX2lkDzEyNDAyNDU3NDI4NzQxNAABp9t_H5j3eVnbpdMrF24JFBTsRStkTpFTRRwOxoCMkgng9RE5d33W6awkihgm_aem_4shyWxEXwDxiJ9KPsnbpqA"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Visit YouTube"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21.58 7.19a2.99 2.99 0 0 0-2.1-2.12C17.63 4.5 12 4.5 12 4.5s-5.63 0-7.48.57a2.99 2.99 0 0 0-2.1 2.12A31.4 31.4 0 0 0 1.85 12a31.4 31.4 0 0 0 .57 4.81 2.99 2.99 0 0 0 2.1 2.12c1.85.57 7.48.57 7.48.57s5.63 0 7.48-.57a2.99 2.99 0 0 0 2.1-2.12A31.4 31.4 0 0 0 22.15 12a31.4 31.4 0 0 0-.57-4.81ZM10.1 15.5v-7l5.9 3.5-5.9 3.5Z" fill="currentColor" />
+              </svg>
+              <span>YouTube</span>
+            </a>
+          </div>
+        </div>
+        <p className="footer-copyright">&copy; {new Date().getFullYear()} Aniket Sharma. All rights reserved.</p>
+      </footer>
+
       <div className="floating-actions" aria-label="Quick contact buttons">
         <a className="floating-btn phone-btn" href="tel:+918076680440" aria-label="Call Aniket Sharma">
           <span className="icon">☎</span>
