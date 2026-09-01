@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import emailjs from '@emailjs/browser'
 import banner1 from './images/banner1.jpeg'
 import banner2 from './images/banner 2.jpeg'
 import banner3 from './images/banner 3.jpeg'
@@ -123,8 +124,12 @@ const testimonials = [
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [submitStatus, setSubmitStatus] = useState('')
 
   useEffect(() => {
+    // Initialize EmailJS
+    emailjs.init('PROJECT_ID_PLACEHOLDER')
+    
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % slides.length)
     }, 4000)
@@ -140,22 +145,44 @@ function App() {
     setActiveIndex((current) => (current + 1) % slides.length)
   }
 
-  const handleConsultationSubmit = (event) => {
+  const handleConsultationSubmit = async (event) => {
     event.preventDefault()
 
     const form = event.currentTarget
     const formData = new FormData(form)
-    const name = formData.get('name')?.toString().trim() || 'Not provided'
-    const phone = formData.get('phone')?.toString().trim() || 'Not provided'
-    const consultationType = formData.get('consultationType')?.toString().trim() || 'Not provided'
-    const query = formData.get('query')?.toString().trim() || 'Not provided'
+    const name = formData.get('name')?.toString().trim() || ''
+    const phone = formData.get('phone')?.toString().trim() || ''
+    const consultationType = formData.get('consultationType')?.toString().trim() || ''
+    const query = formData.get('query')?.toString().trim() || ''
 
-    const subject = encodeURIComponent('New Consultation Request')
-    const body = encodeURIComponent(
-      `Name: ${name}\nPhone: ${phone}\nConsultation Type: ${consultationType}\n\nQuery:\n${query}`,
-    )
+    // Validate form
+    if (!name || !phone || !consultationType || !query) {
+      setSubmitStatus('Please fill all fields')
+      return
+    }
 
-    window.location.href = `mailto:astrologeraniketsharma795@gmail.com?subject=${subject}&body=${body}`
+    try {
+      setSubmitStatus('Sending...')
+      
+      // Send email using EmailJS
+      await emailjs.send('SERVICE_ID_PLACEHOLDER', 'TEMPLATE_ID_PLACEHOLDER', {
+        to_email: 'astrologeraniketsharma795@gmail.com',
+        from_name: name,
+        phone_number: phone,
+        consultation_type: consultationType,
+        message: query,
+      })
+
+      setSubmitStatus('✓ Consultation request sent successfully!')
+      form.reset()
+      
+      // Clear status after 3 seconds
+      setTimeout(() => setSubmitStatus(''), 3000)
+    } catch (error) {
+      console.error('EmailJS error:', error)
+      setSubmitStatus('Error sending request. Please try again.')
+      setTimeout(() => setSubmitStatus(''), 3000)
+    }
   }
 
   return (
@@ -270,6 +297,11 @@ function App() {
                 <textarea name="query" rows="4" placeholder="Tell us about your concern" required />
               </label>
               <button type="submit">Submit</button>
+              {submitStatus && (
+                <div className={`form-status ${submitStatus.includes('Error') || submitStatus.includes('Please') ? 'error' : 'success'}`}>
+                  {submitStatus}
+                </div>
+              )}
             </form>
           </aside>
         </div>
