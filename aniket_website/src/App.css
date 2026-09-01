@@ -516,7 +516,8 @@
 .footer-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 28px;
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
@@ -580,6 +581,54 @@
   width: 22px;
   height: 22px;
   flex: 0 0 22px;
+}
+
+.footer-flags {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.services-provided-label {
+  text-align: center;
+  color: #d7a84a;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+}
+
+.footer-services-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.flag-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.flag-circle[src] {
+  object-fit: cover;
+  padding: 2px;
+}
+
+.flag-circle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  border-color: #d7a84a;
 }
 
 .footer-copyright {
