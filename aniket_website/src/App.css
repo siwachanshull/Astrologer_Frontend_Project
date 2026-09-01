@@ -373,7 +373,7 @@
   position: relative;
   width: 100%;
   margin-top: 24px;
-  background-image: url('./images/Background photo.webp');
+  background-image: url('./images/backgroung image.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -629,6 +629,18 @@
   background: rgba(255, 255, 255, 0.2);
   transform: scale(1.1);
   border-color: #d7a84a;
+}
+
+.footer-disclaimer {
+  width: min(1180px, calc(100% - 32px));
+  margin: 24px auto 0;
+  padding: 16px 20px;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-style: italic;
 }
 
 .footer-copyright {

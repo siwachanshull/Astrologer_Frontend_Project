@@ -456,6 +456,9 @@ function App() {
             </div>
           </div>
         </div>
+        <p className="footer-disclaimer">
+          Disclaimer: Astrology is a traditional guidance system and should not be considered a substitute for professional medical, legal, or financial advice. Results may vary based on individual circumstances.
+        </p>
         <p className="footer-copyright">&copy; {new Date().getFullYear()} Aniket Sharma. All rights reserved.</p>
       </footer>
 
