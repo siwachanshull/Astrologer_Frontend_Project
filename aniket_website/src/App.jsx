@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react'
-import image1 from './images/Crousal-1.jpg'
-import heroImg from './assets/hero.png'
-import lovePhoto from './Services photos/couple fight photo.jpg'
-import moneyPhoto from './Services photos/Money_photo.jpg'
-import kundaliPhoto from './Services photos/Kundali_photo.jpg'
-import childPhoto from './Services photos/Child Problem Photo.jpg'
+import banner1 from './images/banner1.jpeg'
+import banner2 from './images/banner 2.jpeg'
+import banner3 from './images/banner 3.jpeg'
+import logo from './images/logo.jpeg'
+import loveRelationshipImg from './Services photos/Love & Relationship Problem.png'
+import marriageImg from './Services photos/marriage & Compatibility.png'
+import careerImg from './Services photos/Career & Business Problem.png'
+import kundaliImg from './Services photos/Kundli & Life Analysis.png'
+import financeImg from './Services photos/Finance & Prosperity problem.png'
+import futureImg from './Services photos/Future & Personal Guidance.png'
+import childlessImg from './Services photos/childless couple.png'
+import divorceImg from './Services photos/Divorce Problems.png'
+import vashikaranImg from './Services photos/Vashikaran Specialist.png'
 import videoOne from './videos/aniket-clip1.mp4'
 import videoTwo from './videos/aniket cllip_2.mp4'
 import videoThree from './videos/anuket clip-3.mp4'
@@ -12,9 +19,9 @@ import videoFour from './videos/aniket clip-4.mp4'
 import './App.css'
 
 const slides = [
-  { image: image1 },
-  { image: heroImg },
-  { image: image1 },
+  { image: banner1 },
+  { image: banner2 },
+  { image: banner3 },
 ]
 
 const videoCards = [
@@ -26,58 +33,58 @@ const videoCards = [
 
 const serviceCards = [
   {
-    title: 'Love & Relationship',
+    title: '❤️ Love & Relationship Problem',
     description:
-      'Love, marriage, compatibility, relationship conflicts & family-related relationship concerns.',
-    image: lovePhoto,
+      'Expert astrological guidance for love matters, relationship conflicts, emotional healing, and resolving compatibility issues.',
+    image: loveRelationshipImg,
   },
   {
-    title: 'Career & Business',
+    title: '💍 Marriage & Compatibility',
     description:
-      'Job, career growth, business decisions, partnerships, financial & professional guidance.',
-    image: moneyPhoto,
+      'Comprehensive marriage compatibility analysis, pre-marriage consultations, and astrological remedies for successful unions.',
+    image: marriageImg,
   },
   {
-    title: 'Kundli & Life Analysis',
+    title: '💼 Career & Business',
     description:
-      'Detailed Kundli reading, Raj Yog, Dasha, planetary influences, life patterns & major life phases.',
-    image: kundaliPhoto,
+      'Job search guidance, career growth strategies, business decisions, partnerships analysis, and professional success remedies.',
+    image: careerImg,
   },
   {
-    title: 'Child & Family Guidance',
+    title: '🔮 Kundli & Life Analysis',
     description:
-      'Important life decisions, family matters, upcoming opportunities/challenges, timing, foreign travel & personal concerns.',
-    image: childPhoto,
+      'Detailed Kundli reading, Raj Yog analysis, Dasha predictions, planetary influences, and major life phase guidance.',
+    image: kundaliImg,
   },
   {
-    title: 'Financial Stability Solution',
+    title: '💰 Finance & Prosperity',
     description:
-      'Remedies and guidance for debt issues, money flow, wealth blockage, financial stress and steady income growth.',
-    image: moneyPhoto,
+      'Financial guidance, wealth creation remedies, debt solutions, money flow improvement, and prosperity enhancement.',
+    image: financeImg,
   },
   {
-    title: 'Kundali Dosh Remedies',
+    title: '🪐 Future & Personal Guidance',
     description:
-      'Effective solutions for dosh-related problems, planetary imbalances, marriage delays and obstacles in life.',
-    image: kundaliPhoto,
+      'Personal growth guidance, future predictions, life decisions, opportunities and challenges forecasting, and timing analysis.',
+    image: futureImg,
   },
   {
-    title: 'Vastu Consultation',
+    title: 'Childless Couple',
     description:
-      'Home and office Vastu corrections for harmony, peace, prosperity, health, and positive energy flow.',
-    image: lovePhoto,
+      'Specialized astrological guidance and remedies for couples seeking children, fertility issues, and blessings consultation.',
+    image: childlessImg,
   },
   {
-    title: 'Intercaste Marriage Guidance',
+    title: 'Divorce Problems Solution',
     description:
-      'Support and astrological guidance for family approvals, compatibility concerns and relationship harmony.',
-    image: lovePhoto,
+      'Astrological counseling for relationship issues, reconciliation guidance, legal solutions, and healing after separation.',
+    image: divorceImg,
   },
   {
-    title: 'Ex Love Back Guidance',
+    title: 'Vashikaran Specialist',
     description:
-      'Astrological guidance for love reconnection, emotional healing, compatibility and restoring past relationship balance.',
-    image: lovePhoto,
+      'Vashikaran services for relationship harmony, attraction enhancement, and spiritual remedies for personal relationships.',
+    image: vashikaranImg,
   },
 ]
 
@@ -125,6 +132,14 @@ function App() {
     return () => clearInterval(interval)
   }, [])
 
+  const handlePrevSlide = () => {
+    setActiveIndex((current) => (current - 1 + slides.length) % slides.length)
+  }
+
+  const handleNextSlide = () => {
+    setActiveIndex((current) => (current + 1) % slides.length)
+  }
+
   const handleConsultationSubmit = (event) => {
     event.preventDefault()
 
@@ -168,6 +183,23 @@ function App() {
             />
           ))}
         </div>
+
+        <button
+          type="button"
+          className="carousel-button carousel-button-prev"
+          onClick={handlePrevSlide}
+          aria-label="Previous slide"
+        >
+          ❮
+        </button>
+        <button
+          type="button"
+          className="carousel-button carousel-button-next"
+          onClick={handleNextSlide}
+          aria-label="Next slide"
+        >
+          ❯
+        </button>
       </section>
 
       <section className="about-section" id="about">
@@ -347,8 +379,11 @@ function App() {
       <footer className="site-footer">
         <div className="footer-inner">
           <div className="footer-brand">
-            <strong>Aniket Sharma</strong>
-            <span>Astrology Guidance &amp; Consultation</span>
+            <img src={logo} alt="Aniket Sharma Logo" className="footer-logo" />
+            <div>
+              <strong>Aniket Sharma</strong>
+              <span>Astrology Guidance &amp; Consultation</span>
+            </div>
           </div>
 
           <div className="footer-socials" aria-label="Social media links">
