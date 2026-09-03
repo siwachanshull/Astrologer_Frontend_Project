@@ -26,10 +26,14 @@ const slides = [
 ]
 
 const videoCards = [
-  { video: videoOne },
-  { video: videoTwo },
-  { video: videoThree },
-  { video: videoFour },
+  { video: videoOne, title: 'Astrology video' },
+  { video: videoTwo, title: 'Astrology video' },
+  { video: videoThree, title: 'Astrology video' },
+  { video: videoFour, title: 'Astrology video' },
+  { embedUrl: 'https://www.youtube.com/embed/v_DvT9MOlDc', title: 'Astrology short video' },
+  { embedUrl: 'https://www.youtube.com/embed/TomgEL_PiYg', title: 'Astrology short video' },
+  { embedUrl: 'https://www.youtube.com/embed/H9_HzVgpkXo', title: 'Astrology short video' },
+  { embedUrl: 'https://www.youtube.com/embed/T1xAhCgfknY', title: 'Astrology short video' },
 ]
 
 const serviceCards = [
@@ -191,6 +195,11 @@ function App() {
 
   return (
     <main className="landing-page">
+      <a className="top-call-bar" href="tel:+918076680440" aria-label="Call Aniket Sharma at +91 8076680440">
+        <span className="top-call-icon" aria-hidden="true">☎</span>
+        <span>जीवन के सवालों का सही मार्गदर्शन पाएँ — आज ही परामर्श लें। Call: <strong>+91 8700233051</strong></span>
+      </a>
+
       <section className="hero-carousel" aria-label="Astrology banner carousel">
         {slides.map((slide, index) => (
           <div
@@ -237,8 +246,8 @@ function App() {
         <div className="about-layout">
           <div className="about-copy">
             <div className="section-heading">
-              <span className="eyebrow">About Us</span>
-              <h2>Trusted Vedic Astrologer for Life, Love & Career Guidance</h2>
+              <h5 className="about-section-title">About Us</h5>
+              <h3>Trusted Vedic Astrologer for Life, Love & Career Guidance</h3>
             </div>
 
             <p className="lead">
@@ -311,7 +320,7 @@ function App() {
         </div>
 
         <div className="video-grid" aria-label="Video testimonials">
-          {videoCards.map(({ video }, index) => (
+          {videoCards.map(({ video, embedUrl, title }, index) => (
             <a
               key={`video-${index}`}
               href="https://www.instagram.com/astrologeraniketsharma"
@@ -321,9 +330,19 @@ function App() {
               aria-label="Visit Astrologer Aniket Sharma on Instagram"
             >
               <div className="video-box">
-                <video muted autoPlay loop playsInline>
-                  <source src={video} type="video/mp4" />
-                </video>
+                {video ? (
+                  <video muted autoPlay loop playsInline>
+                    <source src={video} type="video/mp4" />
+                  </video>
+                ) : (
+                  <iframe
+                    src={embedUrl}
+                    title={`${title} ${index + 1}`}
+                    loading="lazy"
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                )}
               </div>
             </a>
           ))}
@@ -338,7 +357,7 @@ function App() {
 
       <section className="services-section" aria-label="Our top services">
         <div className="services-header">
-          <span className="eyebrow">Our Top Services</span>
+          <h2>Our Top Services</h2>
         </div>
 
         <div className="services-grid">
