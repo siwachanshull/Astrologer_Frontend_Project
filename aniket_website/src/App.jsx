@@ -463,6 +463,15 @@ Years of practical experience in Vedic Astrology, helping people understand thei
             </a>
 
             <a
+              className="footer-social phone-social"
+              href="tel:+918700233051"
+              aria-label="Call Aniket Sharma at +91 87002 33051"
+            >
+              <span className="footer-phone-icon" aria-hidden="true">☎</span>
+              <span>+91 87002 33051</span>
+            </a>
+
+            <a
               className="footer-social"
               href="https://www.instagram.com/astrologeraniketsharma"
               target="_blank"
