@@ -431,7 +431,7 @@
 .services-section {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 48px 0 30px;
+  padding: 56px 0 36px;
 }
 
 .services-header {
@@ -441,7 +441,7 @@
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
+  gap: 28px;
 }
 
 .service-card {
@@ -454,7 +454,7 @@
 .service-image {
   display: block;
   width: 100%;
-  height: 240px;
+  height: 280px;
   object-fit: contain;
   object-position: center;
   background: #f8f0ea;
@@ -462,12 +462,12 @@
 }
 
 .service-content {
-  padding: 18px 16px 20px;
+  padding: 22px 20px 22px;
 }
 
 .service-card h3 {
   margin: 0 0 10px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #8f1d29;
   line-height: 1.4;
 }
@@ -477,6 +477,27 @@
   color: #4f4044;
   font-size: 0.98rem;
   line-height: 1.7;
+}
+
+.service-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  padding: 10px 14px;
+  background: #8f1d29;
+  border: 1px solid #8f1d29;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.service-whatsapp-link:hover {
+  background: #176b2b;
+  transform: translateY(-1px);
 }
 
 .why-choose-section {

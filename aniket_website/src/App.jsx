@@ -91,13 +91,13 @@ const serviceCards = [
 
 const testimonials = [
   {
-    quote: 'The guidance helped me understand my situation with much more clarity. I finally feel positive and confident about my next steps.',
-    name: 'Riya S.',
+    quote: 'मैं अपने रिश्ते को लेकर काफी परेशान और उलझन में थी। अनिकेत जी ने मेरी बात ध्यान से सुनी और कुंडली के अनुसार मेरी स्थिति को समझाया। बातचीत के बाद मुझे अपने रिश्ते को लेकर काफी स्पष्टता मिली। बहुत ही सहज और सकारात्मक मार्गदर्शन मिला।',
+    name: 'रिया एस',
     detail: 'Relationship Guidance',
   },
   {
-    quote: 'My consultation was detailed, patient, and practical. The remedies were explained beautifully and brought peace to my family.',
-    name: 'Amit K.',
+    quote: 'मेरी कुंडली का बहुत ही विस्तार से विश्लेषण किया गया और हर बात सरल भाषा में समझाई गई। करियर को लेकर जो असमंजस था, उसमें मुझे सही दिशा और काफी स्पष्टता मिली। परामर्श का अनुभव बहुत अच्छा रहा।',
+    name: 'अमित के',
     detail: 'Kundli Consultation',
   },
   {
@@ -238,7 +238,7 @@ function App() {
           <div className="about-copy">
             <div className="section-heading">
               <span className="eyebrow">About Us</span>
-              <h2>Parampara, Anubhav aur Aadhunik Soch</h2>
+              <h2>Trusted Vedic Astrologer for Life, Love & Career Guidance</h2>
             </div>
 
             <p className="lead">
@@ -332,7 +332,7 @@ function App() {
 
       <div className="promo-strip" aria-label="Booking announcement">
         <div className="promo-track">
-          <span>Book your Consultation — Slots are limited. Reserve yours now!!</span>
+          <span>क्या आप परेशान हैं! क्या आपके काम नहीं बन रहे? घर बैठे पायें जीवन की हर समस्या का समाधान +91 870 023 3051</span>
         </div>
       </div>
 
@@ -348,6 +348,15 @@ function App() {
               <div className="service-content">
                 <h3>{title}</h3>
                 <p>{description}</p>
+                <a
+                  className="service-whatsapp-link"
+                  href="https://wa.me/918700233051?text=Hello%20Aniket%20Sharma"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Chat on WhatsApp about ${title}`}
+                >
+                  Chat on WhatsApp
+                </a>
               </div>
             </article>
           ))}
@@ -360,26 +369,24 @@ function App() {
 
           <div className="why-choose-grid">
             <article className="why-box">
-              <h3>Gold Medalist Astrologer</h3>
+              <h3>12+ Years of Astrological Experience</h3>
               <p>
-                Recognised for excellence in astrology, with a disciplined and deeply analytical
-                approach to understanding life patterns and solutions.
+                
+Years of practical experience in Vedic Astrology, helping people understand their life patterns and make informed decisions.
               </p>
             </article>
 
             <article className="why-box">
-              <h3>Ex Love Back Guidance</h3>
+              <h3>Personalised Guidance</h3>
               <p>
-                Compassionate support for emotional healing, relationship clarity, and helping you
-                reconnect with love in a respectful and practical way.
+                Every consultation is approached individually, with guidance based on your unique Kundli, circumstances, and concerns.
               </p>
             </article>
 
             <article className="why-box">
-              <h3>Trusted Guidance</h3>
+              <h3>10,000+ Clients Guided</h3>
               <p>
-                Honest advice, personalised recommendations, and spiritual support that bring peace,
-                confidence, and direction in life’s most sensitive moments.
+                Trusted by thousands of clients across India and internationally for relationship, marriage, career, business, and personal guidance.
               </p>
             </article>
           </div>
