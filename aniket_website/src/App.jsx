@@ -19,6 +19,9 @@ import videoThree from './videos/anuket clip-3.mp4'
 import videoFour from './videos/aniket clip-4.mp4'
 import './App.css'
 
+const PHONE_NUMBER = '+91 87002 33051'
+const PHONE_LINK = 'tel:+918700233051'
+
 const slides = [
   { image: banner1 },
   { image: banner2 },
@@ -132,7 +135,10 @@ function App() {
 
   useEffect(() => {
     // Initialize EmailJS
-    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    if (publicKey) {
+      emailjs.init(publicKey)
+    }
     
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % slides.length)
@@ -167,11 +173,19 @@ function App() {
 
     try {
       setSubmitStatus('Sending...')
+
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+
+      if (!publicKey || !serviceId || !templateId) {
+        throw new Error('Email service is not configured')
+      }
       
       // Send email using EmailJS
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         {
           to_email: 'astrologeraniketsharma795@gmail.com',
           from_name: name,
@@ -195,9 +209,9 @@ function App() {
 
   return (
     <main className="landing-page">
-      <a className="top-call-bar" href="tel:+918076680440" aria-label="Call Aniket Sharma at +91 8076680440">
+      <a className="top-call-bar" href={PHONE_LINK} aria-label={`Call Aniket Sharma at ${PHONE_NUMBER}`}>
         <span className="top-call-icon" aria-hidden="true">☎</span>
-        <span>जीवन के सवालों का सही मार्गदर्शन पाएँ — आज ही परामर्श लें। Call: <strong>+91 8700233051</strong></span>
+        <span>जीवन के सवालों का सही मार्गदर्शन पाएँ — आज ही परामर्श लें। Call: <strong>{PHONE_NUMBER}</strong></span>
       </a>
 
       <section className="hero-carousel" aria-label="Astrology banner carousel">
@@ -464,11 +478,11 @@ Years of practical experience in Vedic Astrology, helping people understand thei
 
             <a
               className="footer-social phone-social"
-              href="tel:+918700233051"
-              aria-label="Call Aniket Sharma at +91 87002 33051"
+              href={PHONE_LINK}
+              aria-label={`Call Aniket Sharma at ${PHONE_NUMBER}`}
             >
               <span className="footer-phone-icon" aria-hidden="true">☎</span>
-              <span>+91 8076680440</span>
+              <span>{PHONE_NUMBER}</span>
             </a>
 
             <a
@@ -534,7 +548,7 @@ Years of practical experience in Vedic Astrology, helping people understand thei
       </footer>
 
       <div className="floating-actions" aria-label="Quick contact buttons">
-        <a className="floating-btn phone-btn" href="tel:+918076680440" aria-label="Call Aniket Sharma">
+        <a className="floating-btn phone-btn" href={PHONE_LINK} aria-label={`Call Aniket Sharma at ${PHONE_NUMBER}`}>
           <span className="icon">☎</span>
         </a>
         <a
