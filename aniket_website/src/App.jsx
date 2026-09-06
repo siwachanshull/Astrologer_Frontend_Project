@@ -346,7 +346,7 @@ function App() {
                 <p>{description}</p>
                 <a
                   className="service-whatsapp-link"
-                  href="https://wa.me/918700233051?text=Hello%20Aniket%20Sharma"
+                  href="https://wa.me/918700233051?text=Namaste%20Aniket%20Ji%20%F0%9F%99%8F%20Mujhe%20astrology%20consultation%20leni%20hai.%20Please%20details%20share%20karein."
                   target="_blank"
                   rel="noreferrer"
                   aria-label={`Chat on WhatsApp about ${title}`}
@@ -465,7 +465,7 @@ Years of practical experience in Vedic Astrology, helping people understand thei
           <div className="footer-socials" aria-label="Social media links">
             <a
               className="footer-social whatsapp-social"
-              href="https://wa.me/918700233051?text=Hello%20Aniket%20Sharma"
+              href="https://wa.me/918700233051?text=Namaste%20Aniket%20Ji%20%F0%9F%99%8F%20Mujhe%20astrology%20consultation%20leni%20hai.%20Please%20details%20share%20karein."
               target="_blank"
               rel="noreferrer"
               aria-label="Chat on WhatsApp at +91 87002 33051"
@@ -553,7 +553,7 @@ Years of practical experience in Vedic Astrology, helping people understand thei
         </a>
         <a
           className="floating-btn whatsapp-btn"
-          href="https://wa.me/918700233051?text=Hello%20Aniket%20Sharma"
+          href="https://wa.me/918700233051?text=Namaste%20Aniket%20Ji%20%F0%9F%99%8F%20Mujhe%20astrology%20consultation%20leni%20hai.%20Please%20details%20share%20karein."
           target="_blank"
           rel="noreferrer"
           aria-label="Chat on WhatsApp"
