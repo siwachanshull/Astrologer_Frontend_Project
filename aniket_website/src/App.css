@@ -1130,6 +1130,29 @@
   .testimonial-card {
     flex-basis: 100%;
   }
+
+  .testimonials-track {
+    display: block;
+    width: 100%;
+    animation: none;
+  }
+
+  .testimonial-group {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .testimonial-group[aria-hidden="true"] {
+    display: none;
+  }
+
+  .testimonial-card {
+    flex: 0 0 auto;
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {
