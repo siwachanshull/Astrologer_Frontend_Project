@@ -154,7 +154,9 @@
 
 @media (max-width: 768px) {
   .hero-carousel {
-    min-height: 50vh;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 8 / 3;
   }
   
   .carousel-button {
@@ -173,7 +175,7 @@
 
 @media (max-width: 480px) {
   .hero-carousel {
-    min-height: 40vh;
+    min-height: 0;
   }
   
   .carousel-button {
@@ -478,7 +480,9 @@
 
 @media (max-width: 768px) {
   .hero-carousel {
-    height: 75vh;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 8 / 3;
   }
 
   .carousel-dots {
@@ -1052,7 +1056,9 @@
 
 @media (max-width: 768px) {
   .hero-carousel {
-    height: 75vh;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 8 / 3;
   }
 
   .carousel-dots {
@@ -1119,6 +1125,21 @@
 
   .testimonial-card {
     flex-basis: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid,
+  .why-choose-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .service-card,
+  .why-box {
+    width: 100%;
+    min-width: 0;
   }
 }
 
