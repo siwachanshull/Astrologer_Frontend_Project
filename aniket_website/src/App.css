@@ -470,7 +470,7 @@
   }
 }
 
-@media (max-width: 1100px) {
+@media (min-width: 901px) and (max-width: 1100px) {
   .why-choose-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -486,7 +486,8 @@
   }
 
   .video-grid,
-  .services-grid {
+  .services-grid,
+  .why-choose-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1081,6 +1082,35 @@
     min-height: 46px;
     padding: 9px 12px;
     font-size: 0.88rem;
+  }
+
+  .services-section,
+  .why-choose-inner {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .service-image {
+    height: 220px;
+  }
+
+  .service-content {
+    padding: 18px 16px 20px;
+  }
+
+  .service-card h3,
+  .why-box h3 {
+    font-size: 1.15rem;
+    overflow-wrap: anywhere;
+  }
+
+  .service-card p,
+  .why-box p {
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+  }
+
+  .why-choose-inner {
+    padding: 52px 0 58px;
   }
 
   .top-call-bar strong {
