@@ -113,14 +113,14 @@ const testimonials = [
     detail: 'Career Guidance',
   },
   {
-    quote: 'Aniket Ji listened carefully and understood the concerns behind my questions. The consultation was truly reassuring.',
-    name: 'Pooja R.',
-    detail: 'Marriage Guidance',
+    quote: 'Honestly, mujhe starting mein samajh nahi aa raha tha ki meri situation ko lekar kya karna chahiye. Aniket ji se baat ki, unhone bina daraye aur bina unnecessary cheezein bole meri Kundli samjhayi. Consultation ke baad kaafi clarity mili. Overall experience kaafi achha raha',
+    name: 'Priya M',
+    detail: 'Kundali Guidance',
   },
   {
-    quote: 'The reading was thoughtful and easy to understand. I appreciated the personal attention and the straightforward guidance.',
-    name: 'Rahul T.',
-    detail: 'Life Analysis',
+    quote: 'Career ko lekar kaafi time se confused tha. Aniket ji ne meri Kundli ka detailed analysis karke simple language mein sab samjhaya. Unki guidance practical lagi aur mujhe apne next steps ko lekar kaafi clarity mili.',
+    name: 'Rahul M.',
+    detail: 'Career & Kundli Guidance',
   },
   {
     quote: 'A calm and respectful consultation that helped me look at my problems with a fresh perspective. Highly recommended.',
@@ -294,43 +294,6 @@ function App() {
             
           </div>
 
-          <aside className="consultation-card" aria-label="Consultation form">
-            <h3>Book Your Consultation</h3>
-            <form className="consultation-form" onSubmit={handleConsultationSubmit}>
-              <label>
-                Full Name
-                <input type="text" name="name" placeholder="Your name" required />
-              </label>
-              <label>
-                Phone Number
-                <input type="tel" name="phone" placeholder="Your phone number" required />
-              </label>
-              <label>
-                Consultation Type
-                <select name="consultationType" defaultValue="" required>
-                  <option value="" disabled>
-                    Select topic
-                  </option>
-                  <option value="love">Love &amp; Relationships</option>
-                  <option value="career">Career</option>
-                  <option value="marriage">Marriage</option>
-                  <option value="business">Business</option>
-                  <option value="family">Family</option>
-                  <option value="other">Other</option>
-                </select>
-              </label>
-              <label>
-                Your Query
-                <textarea name="query" rows="4" placeholder="Tell us about your concern" required />
-              </label>
-              <button type="submit">Submit</button>
-              {submitStatus && (
-                <div className={`form-status ${submitStatus.includes('Error') || submitStatus.includes('Please') ? 'error' : 'success'}`}>
-                  {submitStatus}
-                </div>
-              )}
-            </form>
-          </aside>
         </div>
 
         <div className="video-grid" aria-label="Video testimonials">
@@ -427,6 +390,43 @@ Years of practical experience in Vedic Astrology, helping people understand thei
       </section>
 
       <section className="testimonials-section" aria-label="Client testimonials">
+        <aside className="consultation-card testimonials-consultation-card" aria-label="Consultation form">
+          <h3>Book Your Consultation</h3>
+          <form className="consultation-form" onSubmit={handleConsultationSubmit}>
+            <label>
+              Full Name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              Phone Number
+              <input type="tel" name="phone" placeholder="Your phone number" required />
+            </label>
+            <label>
+              Consultation Type
+              <select name="consultationType" defaultValue="" required>
+                <option value="" disabled>
+                  Select topic
+                </option>
+                <option value="love">Love &amp; Relationships</option>
+                <option value="career">Career</option>
+                <option value="marriage">Marriage</option>
+                <option value="business">Business</option>
+                <option value="family">Family</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
+            <label>
+              Your Query
+              <textarea name="query" rows="4" placeholder="Tell us about your concern" required />
+            </label>
+            <button type="submit">Submit</button>
+            {submitStatus && (
+              <div className={`form-status ${submitStatus.includes('Error') || submitStatus.includes('Please') ? 'error' : 'success'}`}>
+                {submitStatus}
+              </div>
+            )}
+          </form>
+        </aside>
         <div className="testimonials-heading">
           <span className="eyebrow">Client Experiences</span>
           <h2>What People Say</h2>

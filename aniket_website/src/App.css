@@ -215,13 +215,12 @@
 }
 
 .about-layout {
-  display: grid;
-  grid-template-columns: 1.5fr 0.9fr;
-  gap: 32px;
-  align-items: start;
+  display: block;
 }
 
 .about-copy {
+  width: min(100%, 860px);
+  margin: 0 auto;
   color: #2d1f22;
 }
 
@@ -640,6 +639,11 @@
   overflow: hidden;
   padding: 64px 0 72px;
   background: #fffaf2;
+}
+
+.testimonials-consultation-card {
+  width: min(560px, calc(100% - 32px));
+  margin: 0 auto 44px;
 }
 
 .testimonials-heading {
