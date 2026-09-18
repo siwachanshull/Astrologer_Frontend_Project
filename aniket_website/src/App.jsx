@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import emailjs from '@emailjs/browser'
-import banner1 from './images/banner1.jpeg'
+import banner1 from './images/banner1.png'
 import banner2 from './images/banner 2.jpeg'
 import banner3 from './images/banner 3.jpeg'
 import logo from './images/logo.jpeg'
