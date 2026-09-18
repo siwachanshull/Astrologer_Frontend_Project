@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import emailjs from '@emailjs/browser'
 import banner1 from './images/banner1.png'
 import banner2 from './images/banner 2.jpeg'
 import banner3 from './images/banner 3.jpeg'
@@ -21,6 +20,7 @@ import './App.css'
 
 const PHONE_NUMBER = '+91 87002 33051'
 const PHONE_LINK = 'tel:+918700233051'
+const CONTACT_EMAIL = 'astrologeraniketsharma795@gmail.com'
 
 const slides = [
   { image: banner1 },
@@ -134,12 +134,6 @@ function App() {
   const [submitStatus, setSubmitStatus] = useState('')
 
   useEffect(() => {
-    // Initialize EmailJS
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    if (publicKey) {
-      emailjs.init(publicKey)
-    }
-    
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % slides.length)
     }, 4000)
@@ -174,26 +168,22 @@ function App() {
     try {
       setSubmitStatus('Sending...')
 
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      formData.set('name', name)
+      formData.set('phone', phone)
+      formData.set('consultationType', consultationType)
+      formData.set('query', query)
+      formData.set('_subject', `New consultation request from ${name}`)
+      formData.set('_captcha', 'false')
 
-      if (!publicKey || !serviceId || !templateId) {
-        throw new Error('Email service is not configured')
+      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: formData,
+      })
+
+      if (!response.ok) {
+        throw new Error(`Form submission failed with status ${response.status}`)
       }
-      
-      // Send email using EmailJS
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          to_email: 'astrologeraniketsharma795@gmail.com',
-          from_name: name,
-          phone_number: phone,
-          consultation_type: consultationType,
-          message: query,
-        }
-      )
 
       setSubmitStatus('✓ Consultation request sent successfully!')
       form.reset()
@@ -201,8 +191,18 @@ function App() {
       // Clear status after 3 seconds
       setTimeout(() => setSubmitStatus(''), 3000)
     } catch (error) {
-      console.error('EmailJS error:', error)
-      setSubmitStatus('Error sending request. Please try again.')
+      const errorStatus = error?.status
+      const errorText = error?.text || error?.message || 'Unknown EmailJS error'
+      console.error('EmailJS error:', {
+        status: errorStatus,
+        message: errorText,
+        error,
+      })
+      setSubmitStatus(
+        errorStatus === 412
+          ? 'EmailJS rejected the request. Check the EmailJS service and template settings.'
+          : 'Error sending request. Please try again.'
+      )
       setTimeout(() => setSubmitStatus(''), 3000)
     }
   }
